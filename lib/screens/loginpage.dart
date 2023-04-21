@@ -15,6 +15,7 @@ class LoginPage extends StatelessWidget {
     }
   } // _loginUser
 
+
   Future<String> _signUpUser(SignupData data) async {
     return 'To be implemented';
   } // _signUpUser
