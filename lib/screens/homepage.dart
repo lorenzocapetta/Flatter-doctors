@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_doctors/models/cookbook.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter_doctors/screens/loginpage.dart';
 import 'package:flutter_doctors/screens/infopage.dart';
+import 'package:flutter_doctors/screens/cookbookpage.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   static const routename = 'Homepage';
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+
+class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+
+  List _screens = [
+    HomePage(),
+    CookBook(),
+    InfoPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +32,11 @@ class HomePage extends StatelessWidget {
         title: const Text(HomePage.routename),
         actions: [
           IconButton(
-              onPressed: () => _toInfoPage(context), icon: Icon(MdiIcons.human))
+              onPressed: () => _toInfoPage(context), icon: const Icon(MdiIcons.account))
         ],
       ),
-      body: const Center(
-          child: Text('Meal'),
-        ),
+      body: 
+        _screens[_currentIndex],
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -39,6 +54,36 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(MdiIcons.foodForkDrink),
+            label: 'Cookbook',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(MdiIcons.account),
+            label: 'Profile',
+          ),
+        ],
+        backgroundColor: Colors.blue,
+        // selectedFontSize: 10,
+        type: BottomNavigationBarType.fixed,
+        selectedIconTheme: const IconThemeData(color: Colors.black),
+        selectedItemColor: Colors.black,
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+        unselectedIconTheme: const IconThemeData(color: Colors.black38),
+        unselectedItemColor: Colors.black38,
+
+        onTap: (value) {
+          // Respond to item press.
+          setState(() => _currentIndex = value);
+        },
+        currentIndex: _currentIndex,
       ),
     );
   } //build

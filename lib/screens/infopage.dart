@@ -19,4 +19,4 @@ class InfoPage extends StatelessWidget {
     
   } //build
 
-} //CartPage
+} //InfoPage
