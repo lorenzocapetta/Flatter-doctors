@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   List _screens = [
     HomePage(),
-    CookBook(),
+    CookBookPage(),
     InfoPage(),
   ];
 

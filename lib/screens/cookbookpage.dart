@@ -3,17 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class CookBook extends StatelessWidget {
-  CookBook({Key? key}) : super(key: key);
+class CookBookPage extends StatelessWidget {
+  CookBookPage({Key? key}) : super(key: key);
 
   static const routename = 'Cookbook';
 
   @override
   Widget build(BuildContext context) {
-    print('${CookBook.routename} built');
+    print('${CookBookPage.routename} built');
     return Scaffold(
       appBar: AppBar(
-        title: Text(CookBook.routename),
+        title: Text(CookBookPage.routename),
       ),
     );
     
