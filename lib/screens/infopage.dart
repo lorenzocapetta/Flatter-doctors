@@ -15,6 +15,13 @@ class InfoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(InfoPage.routename),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Logout',
+            onPressed: () => _toLoginPage(context),
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(

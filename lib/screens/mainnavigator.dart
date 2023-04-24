@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter_doctors/screens/loginpage.dart';
 import 'package:flutter_doctors/screens/infopage.dart';
-import 'package:flutter_doctors/screens/cookbookpage.dart';
+import 'package:flutter_doctors/screens/foodstoragepage.dart';
 import 'package:flutter_doctors/screens/homepage.dart';
 
 class MainNavigator extends StatefulWidget {
@@ -23,7 +23,7 @@ class _MainNavigatorState extends State<MainNavigator> {
 
   final List<Widget> _screens = [
     const HomePage(),
-    CookBookPage(),
+    FoodStoragePage(),
     InfoPage(),
   ];
 
@@ -74,7 +74,7 @@ class _MainNavigatorState extends State<MainNavigator> {
           ),
           BottomNavigationBarItem(
             icon: Icon(MdiIcons.foodForkDrink),
-            label: 'Cookbook',
+            label: 'Food Storage',
           ),
           BottomNavigationBarItem(
             icon: Icon(MdiIcons.account),

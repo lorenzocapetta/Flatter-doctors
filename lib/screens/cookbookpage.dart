@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 //import 'package:provider/provider.dart';
 
+
 class CookBookPage extends StatelessWidget {
   CookBookPage({Key? key}) : super(key: key);
 
-  static const routename = 'Cookbook';
+  static const routename = 'CookBook';
 
   @override
   Widget build(BuildContext context) {
